@@ -6,11 +6,14 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 chmod 700 get_helm.sh
 ./get_helm.sh
 ```
+---
 
 ## Add Chart Repo
 ```bash
 helm repo add bitnami https://charts.bitnami.com/bitnami  
 ```
+
+---
 
 ## Search a repo
 ```bash
@@ -19,6 +22,8 @@ helm search repo drupal
 NAME            CHART VERSION   APP VERSION     DESCRIPTION
 bitnami/drupal  10.4.2          9.2.8           One of the most versatile open source content m...
 ```
+
+---
 
 ## Install a package
 ```bash
@@ -61,6 +66,8 @@ helm install mysite bitnami/drupal --values ./values.yaml
 helm install mysite bitnami/drupal --set drupalUsername=admin mariadb.db.name=my-database
 ```
 
+---
+
 ## Listing Installations
 ```bash
 # By default, helm will list only installations in the default keyspace
@@ -76,6 +83,8 @@ NAME    NAMESPACE       REVISION        UPDATED                                 
 mysite  default         1               2021-11-10 15:18:00.615115516 +0000 UTC deployed        drupal-10.4.2   9.2.8
 mysite  other           1               2021-11-10 15:29:51.822350106 +0000 UTC deployed        drupal-10.4.2   9.2.8
 ```
+
+---
 
 ## Upgrade an Installation
 Upgrading an installation can involve, either individually or at the same time
@@ -125,6 +134,8 @@ helm upgrade mysite bitnami/drupal
 helm upgrade mysite bitnami/drupal --values values.yaml
 ```
 
+---
+
 ## Uninstall an Installation
 ```bash
 helm uninstall mysite
@@ -132,6 +143,8 @@ helm uninstall mysite
 # uninstall from a specific namespace
 helm uninstall mysite --namespace other
 ```
+
+---
 
 ## How Helm Stores Release Information
 ```bash
